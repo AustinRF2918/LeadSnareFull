@@ -1,0 +1,128 @@
+@mixin form-cluster-generate($jBackgroundColor, $jForegroundColor, $jBorderColor, $jSize, $breakpoint)
+{
+    @if ($breakpoint == "xs" or $breakpoint == "sm" or $breakpoint == "md" or $breakpoint == "lg" or $breakpoint == "xl")
+    {
+        @if ($jSize > 6)
+        {
+            @error("form-cluster size too large!");
+        }
+        @else if ($jSize < 0)
+        {
+            @error("form-cluster size must be greater than zero!");
+        }
+        @else if ($jSize == 1 or $jSize == 3 or $jSize == 5 or $jSize == 7 or $jSize == 9 or $jSize == 11)
+        {
+            @error("You must choose a size with a symetric offset possibility.");
+        }
+        @else
+        {
+            .form-cluster-#{$breakpoint}-#{$jSize}
+            {
+                @extend .col-md-#{$jSize};
+                @extend .col-md-offset-#{$jSize / 2};
+                @extend .jumbotron;
+                background: $jBackgroundColor;
+                color: $jForegroundColor;
+                border: solid 2px $jBorderColor;
+            }
+        }
+    }
+    @else
+    {
+        @error("You must entry a valid Bootstrap 4 Breakpoint.")
+         
+    }
+}
+
+@mixin form-cluster-generate-framework($jSize, $breakpoint)
+{
+    @if ($breakpoint == "xs" or $breakpoint == "sm" or $breakpoint == "md" or $breakpoint == "lg" or $breakpoint == "xl")
+    {
+        @if ($jSize > 12)
+        {
+            @error("form-cluster size too large!");
+        }
+        @else if ($jSize < 0)
+        {
+            @error("form-cluster size must be greater than zero!");
+        }
+        @else if ($jSize == 1 or $jSize == 3 or $jSize == 5 or $jSize == 7 or $jSize == 9 or $jSize == 11)
+        {
+            @error("You must choose a size with a symetric offset possibility.");
+        }
+        @else
+        {
+            .form-cluster-#{$breakpoint}-#{$jSize}
+            {
+                @extend .col-#{$breakpoint}-#{$jSize};
+                //Bruteforce cuz I don't know the math...
+                @if ($jSize == 2)
+                {
+                    @extend .col-#{$breakpoint}-offset-5;
+                }
+                @if ($jSize == 4)
+                {
+                    @extend .col-#{$breakpoint}-offset-4;
+                }
+                @if ($jSize == 6)
+                {
+                    @extend .col-#{$breakpoint}-offset-3;;
+                }
+                @if ($jSize == 8)
+                {
+                    @extend .col-#{$breakpoint}-offset-2;
+                }
+                @if ($jSize == 10)
+                {
+                    @extend .col-#{$breakpoint}-offset-1;
+                }
+                @extend .jumbotron;
+            }
+        }
+    }
+    @else
+    {
+        @error("You must entry a valid Bootstrap 4 Breakpoint.")
+         
+    }
+}
+
+//DELETE ON FRAMEWORK RELEASE
+.login-cluster
+{
+    background: white;
+}
+
+@include form-cluster-generate-framework(12, xl);
+@include form-cluster-generate-framework(10, xl);
+@include form-cluster-generate-framework(8, xl);
+@include form-cluster-generate-framework(6, xl);
+@include form-cluster-generate-framework(4, xl);
+@include form-cluster-generate-framework(2, xl);
+@include form-cluster-generate-framework(12, lg);
+@include form-cluster-generate-framework(10, lg);
+@include form-cluster-generate-framework(8, lg);
+@include form-cluster-generate-framework(6, lg);
+@include form-cluster-generate-framework(4, lg);
+@include form-cluster-generate-framework(2, lg);
+@include form-cluster-generate-framework(12, md);
+@include form-cluster-generate-framework(10, md);
+@include form-cluster-generate-framework(8, md);
+@include form-cluster-generate-framework(6, md);
+@include form-cluster-generate-framework(4, md);
+@include form-cluster-generate-framework(2, md);
+@include form-cluster-generate-framework(12, sm);
+@include form-cluster-generate-framework(10, sm);
+@include form-cluster-generate-framework(8, sm);
+@include form-cluster-generate-framework(6, sm);
+@include form-cluster-generate-framework(4, sm);
+@include form-cluster-generate-framework(12, sm);
+@include form-cluster-generate-framework(10, sm);
+@include form-cluster-generate-framework(8, sm);
+@include form-cluster-generate-framework(2, sm);
+@include form-cluster-generate-framework(12, xs);
+@include form-cluster-generate-framework(10, xs);
+@include form-cluster-generate-framework(8, xs);
+@include form-cluster-generate-framework(6, xs);
+@include form-cluster-generate-framework(4, xs);
+@include form-cluster-generate-framework(2, xs);

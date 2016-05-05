@@ -1,0 +1,12 @@
+$color-glyphicon-subdued : lighten(#555555, 20%);
+
+.glyphicon-subdued
+{
+    cursor: pointer;
+    color: $color-glyphicon-subdued;
+
+    &:hover{
+	color: lighten($color-glyphicon-subdued, 20%);
+    }
+
+}

@@ -1,0 +1,91 @@
+$font-size-1: 12px;
+$font-size-2: 16px;
+$font-size-3: 24px;
+$font-size-4: 34px;
+$font-size-5: 45px;
+$font-size-6: 56px;
+$font-size-7: 112px;
+
+$font-size-map: (1: 12px, 2: 16px, 3: 24px, 4: 34px, 5: 45px, 6: 56px, 7: 112px);
+
+
+//Todo: make conversion function to ems and 
+//relative vws.
+
+$number-sizes : 7;
+
+//Takes in up, down, or in for direction.
+//Inclusive
+@mixin responsive-typography-generate($name, $breakpoint, $direction, $size, $responsive, $selector)
+{
+
+    @if ($size > $number-sizes)
+    {
+        @error("Responsive typography only goes up to " + $number-sizes + " sizes")
+    }
+
+    @if ($direction == up)
+    {
+        @include media-breakpoint-up($breakpoint, (xs: 0px, sm: 544px, md: 768px, lg: 992px, xl: 1200px))
+        {
+            @if ($responsive != true)
+            {
+                .#{$selector}{
+                    font-size: map-get($font-size-map, $size);
+                }
+            }
+            @else
+            {
+
+            }
+        }
+
+    }
+    @else if ($direction == down)
+    {
+        @include media-breakpoint-down($breakpoint, (xs: 0px, sm: 544px, md: 768px, lg: 992px, xl: 1200px))
+        {
+            @if ($responsive != true)
+            {
+                .#{$selector}{
+                    font-size: map-get($font-size-map, $size);
+            }
+        }
+            @else
+            {
+
+            }
+        }
+    }
+    @else if ($direction == in)
+    {
+        @include media-breakpoint-only($breakpoint, (xs: 0px, sm: 544px, md: 768px, lg: 992px, xl: 1200px))
+        {
+            @if ($responsive != true)
+            {
+                .#{$selector}{
+                    font-size: map-get($font-size-map, $size);
+                }
+            }
+            @else
+            {
+
+            }
+        }
+    }
+}
+
+$directions: up down in;
+$breakpoints: xs sm md lg xl;
+
+@for $i from 1 through 7
+{
+    @each $direction in $directions
+    {
+        @each $point in $breakpoints
+        {
+            @include responsive-typography-generate("tp", $point, $direction, $i, false, tp-#{$point}-#{$direction}-#{$i});
+        }
+    }
+}
+

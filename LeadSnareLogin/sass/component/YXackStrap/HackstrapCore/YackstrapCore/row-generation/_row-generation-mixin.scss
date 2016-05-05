@@ -1,0 +1,137 @@
+//To be moved!
+//To be moved!
+
+//Unlike Bootstraps 12 column layout, which is finite, height can be
+//infinite, so I thought three browser pages would probably be good
+//enough. If you want you can always style two rows the exact same.
+//what this is more about is being able to easily center stuff on the
+//screen.
+
+$list-type: height, width;
+$list-breaks-width: xs, sm, md, lg, xl;
+$list-breaks-height: sh, mh, lh;
+$list-orientations: under, at, over;
+
+//All our integer sizes.
+@for $size from 1 through 36
+{
+    @each $type in $list-type
+    {
+        @if $type == height
+        {
+            @each $break in $list-breaks-height
+            {
+                @if $break == lh
+                {
+                    @each $orientation in $list-orientations
+                    {
+                        .row-#{$break}-#{$size}-#{$orientation}
+                        {
+                            @include generate-row($break, $size, $orientation, absolute);
+                        }
+                    }
+                }
+                @else
+                {
+                    @each $orientation in $list-orientations
+                    {
+                        .row-#{$break}-#{$size}-#{$orientation}
+                        {
+                            @include generate-row($break, $size, $orientation, relative);
+                        }
+                    }
+                }
+
+            }
+        }
+        @else if ($type == width)
+        {
+            @each $break in $list-breaks-width
+            {
+                @if $break == xs or $break == sm
+                {
+                    @each $orientation in $list-orientations
+                    {
+                        .row-#{$break}-#{$size}-#{$orientation}
+                        {
+                            @include generate-row($break, $size, $orientation, absolute);
+                        }
+                    }
+                }
+                @else 
+                {
+                    @each $orientation in $list-orientations
+                    {
+                        .row-#{$break}-#{$size}-#{$orientation}
+                        {
+                            @include generate-row($break, $size, $orientation, relative);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+//All our integer sizes.
+@for $size from 1 through 36
+{
+    @each $type in $list-type
+    {
+        @if $type == height
+        {
+            @each $break in $list-breaks-height
+            {
+                @if $break == lh
+                {
+                    @each $orientation in $list-orientations
+                    {
+                        .top-#{$break}-#{$size}-#{$orientation}
+                        {
+                            @include generate-top($break, $size, $orientation, absolute);
+                        }
+                    }
+                }
+                @else
+                {
+                    @each $orientation in $list-orientations
+                    {
+                        .top-#{$break}-#{$size}-#{$orientation}
+                        {
+                            @include generate-top($break, $size, $orientation, relative);
+                        }
+                    }
+                }
+
+            }
+        }
+        @else if ($type == width)
+        {
+            @each $break in $list-breaks-width
+            {
+                @if $break == xs or $break == sm
+                {
+                    @each $orientation in $list-orientations
+                    {
+                        .top-#{$break}-#{$size}-#{$orientation}
+                        {
+                            @include generate-top($break, $size, $orientation, absolute);
+                        }
+                    }
+                }
+                @else 
+                {
+                    @each $orientation in $list-orientations
+                    {
+                        .top-#{$break}-#{$size}-#{$orientation}
+                        {
+                            @include generate-top($break, $size, $orientation, relative);
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

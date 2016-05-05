@@ -1,0 +1,283 @@
+//This is stored to facilitate our generate row function in making
+//the decision to make a height based media query, or a width
+//based media query. We use a conditional to decide inside of the
+//function, and of course we use error handling to make sure we
+//don't get bad error messages.
+
+$breakpoint-type: (
+    sh: height,
+    mh: height,
+    lh: height,
+    xs: width,
+    sm: width,
+    md: width,
+    lg: width,
+    xl: width
+) !default;
+
+//Every row has to have a general PX and VH based height for its
+//sub components. Think of an integral in calculus. We have to
+//have a delta value. 
+
+$row-dimensions: (
+    dRelative: 100vh/12,
+    dAbsolute: 850px/12 
+);
+
+
+//This generates rows based on min-height: it's pretty robust
+//and has error handling.
+@mixin generate-row($breakpoint, $size, $orientation, $relative)
+{
+    @if (map-get($breakpoint-type, $breakpoint) == height)
+    {
+	@if ($orientation == over)
+	{
+	    @include vertical-over-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    min-height: $size * map-get($row-dimensions, dRelative);
+		}
+		@else if ($relative == absolute)
+		{
+		    min-height: $size * map-get($row-dimensions, dAbsolute);
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+	    }
+	}
+	@else if ($orientation == at)
+	{
+	    @include vertical-at-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    min-height: $size * map-get($row-dimensions, dRelative) !important;
+		}
+		@else if ($relative == absolute)
+		{
+		    min-height: $size * map-get($row-dimensions, dAbsolute) !important;
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+		//Add a general PX or VH based row height.
+	    }
+	}
+	@else if ($orientation == under)
+	{
+	    @include vertical-under-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    min-height: $size * map-get($row-dimensions, dRelative);
+		}
+		@else if ($relative == absolute)
+		{
+		    min-height: $size * map-get($row-dimensions, dAbsolute);
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+	    }
+	}
+	@else
+	{
+	    @error("You did not enter a valid orientation into row generate.")
+	}
+
+    }
+    @else if (map-get($breakpoint-type, $breakpoint) == width)
+    {
+	@if ($orientation == over)
+	{
+	    @include horizontal-over-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    min-height: $size * map-get($row-dimensions, dRelative);
+
+		}
+		@else if ($relative == absolute)
+		{
+		    min-height: $size * map-get($row-dimensions, dAbsolute);
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+	    }
+	}
+	@else if ($orientation == at)
+	{
+	    @include horizontal-at-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    min-height: $size * map-get($row-dimensions, dRelative) !important;
+		}
+		@else if ($relative == absolute)
+		{
+		    min-height: $size * map-get($row-dimensions, dAbsolute) !important;
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+	    }
+	}
+	@else if ($orientation == under)
+	{
+	    @include horizontal-under-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    min-height: $size * map-get($row-dimensions, dRelative);
+		}
+		@else if ($relative == absolute)
+		{
+		    min-height: $size * map-get($row-dimensions, dAbsolute);
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+	    }
+	}
+	@else
+	{
+	    @error("You did not enter a valid orientation into row generate.")
+	}
+    }
+    @else
+    {
+	@error("You did not enter a valid breakpoint.");
+    }
+}
+
+//This helps us align elements
+@mixin generate-top($breakpoint, $size, $orientation, $relative)
+{
+    @if (map-get($breakpoint-type, $breakpoint) == height)
+    {
+	@if ($orientation == over)
+	{
+	    @include vertical-over-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    margin-top: $size * map-get($row-dimensions, dRelative);
+		}
+		@else if ($relative == absolute)
+		{
+		    margin-top: $size * map-get($row-dimensions, dAbsolute);
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+	    }
+	}
+	@else if ($orientation == at)
+	{
+	    @include vertical-at-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    margin-top: $size * map-get($row-dimensions, dRelative) !important;
+		}
+		@else if ($relative == absolute)
+		{
+		    margin-top: $size * map-get($row-dimensions, dAbsolute) !important;
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+		//Add a general PX or VH based row height.
+	    }
+	}
+	@else if ($orientation == under)
+	{
+	    @include vertical-under-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    margin-top: $size * map-get($row-dimensions, dRelative);
+		}
+		@else if ($relative == absolute)
+		{
+		    margin-top: $size * map-get($row-dimensions, dAbsolute);
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+	    }
+	}
+	@else
+	{
+	    @error("You did not enter a valid orientation into row generate.")
+	}
+
+    }
+    @else if (map-get($breakpoint-type, $breakpoint) == width)
+    {
+	@if ($orientation == over)
+	{
+	    @include horizontal-over-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    margin-top: $size * map-get($row-dimensions, dRelative);
+
+		}
+		@else if ($relative == absolute)
+		{
+		    margin-top: $size * map-get($row-dimensions, dAbsolute);
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+	    }
+	}
+	@else if ($orientation == at)
+	{
+	    @include horizontal-at-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    margin-top: $size * map-get($row-dimensions, dRelative) !important;
+		}
+		@else if ($relative == absolute)
+		{
+		    margin-top: $size * map-get($row-dimensions, dAbsolute) !important;
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+	    }
+	}
+	@else if ($orientation == under)
+	{
+	    @include horizontal-under-breakpoint($breakpoint){
+		@if ($relative == relative)
+		{
+		    margin-top: $size * map-get($row-dimensions, dRelative);
+		}
+		@else if ($relative == absolute)
+		{
+		    margin-top: $size * map-get($row-dimensions, dAbsolute);
+		}
+		@else
+		{
+		    @error("You placed something that wasn't absolute or relative into the relativity variable!")
+		}
+	    }
+	}
+	@else
+	{
+	    @error("You did not enter a valid orientation into row generate.")
+	}
+    }
+    @else
+    {
+	@error("You did not enter a valid breakpoint.");
+    }
+}

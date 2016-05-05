@@ -1,0 +1,4 @@
+.generalized-leadsnare-navbar
+{
+    @extend .navbar;
+}

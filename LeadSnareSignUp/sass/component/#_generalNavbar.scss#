@@ -1,0 +1,24 @@
+//Spacing
+$nav-spacing: 0px;
+
+//Colors
+$color-leadsnare-button-background : rgba(255, 255, 255, 0.5);
+$color-leadsnare-button-text : darken(#f1f1f1, 55%);
+$color-leadsnare-button-border : darken(#f1f1f1, 55%);
+
+//Sizing
+$sizing-leadsnare-button-x: 20px;
+$sizing-leadsnare-button-y: 15px;
+$sizing-leadsnare-button-lh: 1em;
+$sizing-leadsnare-button-br: 0px;
+$sizing-leadsnare-button-text: 1.30em;
+
+.generalized-leadsnare-navbar
+{
+    @extend .navbar;
+}
+
+.leadsnare
+{
+    
+}

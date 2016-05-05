@@ -1,0 +1,142 @@
+//It is notable that I could defined these in a seperate "variable"
+//file but I find thise less than desirable because of the compiler
+//tendancy to ignore any "chained includes". On top of this, being
+//able to observe values that I know will be constantly as I am
+//in the document is preferable.
+
+$grid-breakpoints: (
+    xs: 0,
+    sm: 544px,
+    md: 768px,
+    lg: 992px,
+    xl: 1200px
+) !default;
+
+$grid-breakpoints-upper: (
+    xs: 543px,
+    sm: 767px,
+    md: 991px,
+    lg: 1199px,
+    xl: 100000px //I don't expect 100,000 width screens coming out anytime soon.
+) !default;
+
+//Here is a major departure from Bootstrap: I have grid breakpoints
+//for height based screens: this means wen can choose different things
+//based on screen height as well. I only include three because this is not
+//as critical and when we get to a low height, we can usually just switch
+//to a static phone based representation.
+
+$height-breakpoints: (
+    sh: 0px, //Small Height!
+    mh: 720px, //Medium Height!
+    lh: 1080px, //Large Height!
+) !default;
+
+$height-breakpoints-upper: (
+    sh: 719px,
+    mh: 1079px,
+    lh: 100000px, //Like I said, don't expect this resolution to happen any time soon.
+) !default;
+
+//Function to recieve bound in other portions of code.
+@function getGridBreakpoint($key)
+{
+    //Error handling for easy debugging.
+    @if map-has-key($grid-breakpoints, $key)
+    {
+	@return map-get($grid-breakpoints, $key);
+    }
+    @else
+    {
+	@error("Error in breakpoint-utility partial: you tried to get a breakpoint
+	on a type that does have a breakpoint! (Maybe you were going for HEIGHT breakpoint?)");
+    }
+}
+
+//Function to recieve upper bound in other portions of code.
+@function getGridBreakpointUpper($key)
+{
+    //Error handling for easy debugging.
+    @if map-has-key($grid-breakpoints-upper, $key)
+    {
+	@return map-get($grid-breakpoints-upper, $key);
+    }
+    @else
+    {
+	@error("Error in breakpoint-utility partial: you tried to get a breakpoint
+	on a type that does have a breakpoint! (Maybe you were going for HEIGHT breakpoint?)");
+    }
+}
+//Function to recieve bound in other portions of code. (height based.)
+@function getHeightBreakpoint($key)
+{
+    //Error handling for easy debugging.
+    @if map-has-key($height-breakpoints, $key)
+    {
+	@return map-get($height-breakpoints, $key);
+    }
+    @else
+    {
+	@error("Error in breakpoint-utility partial: you tried to get a breakpoint
+	on a type that does have a breakpoint! (maybe you were going for GRID breakpoint?");
+    }
+}
+
+//Function to recieve upper bound in other portions of code.
+@function getHeightBreakpointUpper($key)
+{
+    //Error handling for easy debugging.
+    @if map-has-key($height-breakpoints-upper, $key)
+    {
+	@return map-get($height-breakpoints-upper, $key);
+    }
+    @else
+    {
+	@error("Error in breakpoint-utility partial: you tried to get a breakpoint
+	on a type that does have a breakpoint! (maybe you were going for GRID breakpoint?)");
+    }
+}
+
+//We have error checks in getGridbreakpoint
+@mixin horizontal-over-breakpoint($point){
+    @media screen and (min-width: getGridBreakpoint($point))
+    {
+	@content;
+    }
+}
+
+@mixin horizontal-under-breakpoint($point){
+    @media screen and (max-width: getGridBreakpointUpper($point))
+    {
+	@content;
+    }
+}
+
+@mixin horizontal-at-breakpoint($point){
+    @media (min-width: getGridBreakpoint($point)) and (max-width: getGridBreakpointUpper($point))
+    {
+	@content;
+    }
+}
+@mixin vertical-over-breakpoint($point){
+    @media screen and (min-height: getHeightBreakpoint($point))
+    {
+	@content;
+    }
+}
+
+@mixin vertical-under-breakpoint($point){
+    @media screen and (max-height: getHeightBreakpointUpper($point))
+    {
+	@content;
+    }
+}
+
+@mixin vertical-at-breakpoint($point){
+    @media (min-height: getHeightBreakpoint($point)) and (max-height: getHeightBreakpointUpper($point))
+    {
+	@content;
+    }
+}
+
+
