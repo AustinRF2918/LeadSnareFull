@@ -5225,4 +5225,15 @@ a.bg-danger:focus, a.bg-danger:hover {
 .text-foreground-dark {
   color: #424242; }
 
+.background-faded {
+  background: #f7f7f9 !important; }
+  .background-faded a {
+    color: rgba(0, 0, 0, 0.8) !important; }
+  .background-faded th {
+    font-weight: normal;
+    color: rgba(0, 0, 0, 0.8) !important; }
+
+.background-normal a {
+  color: rgba(0, 0, 0, 0.8) !important; }
+
 /*# sourceMappingURL=app.css.map */
