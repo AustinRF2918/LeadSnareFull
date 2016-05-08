@@ -1,3 +1,4 @@
+//Typography Coloration
 .text-faded-dark
 {
     color: darken(#f4f4f4, 20%);
@@ -17,4 +18,41 @@
 {
     color: darken(#9b9b9b, 35%);
 }  
-    
+
+.background-faded
+{
+    a{
+        color: rgba(0, 0, 0, 0.8) !important;
+    }
+
+    th{
+        font-weight: normal;
+        color: rgba(0, 0, 0, 0.8) !important;
+    }
+    background: #f7f7f9 !important;
+}
+
+.background-normal
+{
+    a{
+        color: rgba(0, 0, 0, 0.8) !important;
+    }
+}
+
+//Typography Size
+.landing-page
+{
+    &-header
+    {
+        margin-bottom: 40px;
+        font-size: 2.75em;
+    }
+
+    &-subheader
+    {
+        color: #636363;
+        margin-top: 40px;
+        margin-bottom: 40px;
+        font-size: 1.5em; //Half the size of the header.
+    }
+}

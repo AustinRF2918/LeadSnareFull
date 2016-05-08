@@ -3,8 +3,11 @@ $nav-spacing: 0px;
 
 //Colors
 $color-leadsnare-button-background : #91C6F3;
+$color-leadsnare-button-alternate-background : #161f29;
 $color-leadsnare-button-text : #f1f1f1;
+$color-leadsnare-button-alternate-text : #ffffff;
 $color-leadsnare-button-border : #f1f1f1;
+$color-leadsnare-button-alternate-border : #161f29;
 
 //Sizing
 $sizing-leadsnare-button-x: 20px;
@@ -58,6 +61,35 @@ $sizing-leadsnare-button-text: 1.30em;
     background: $color-leadsnare-button-background;
     border-radius: 0px;
     font-family: 'Roboto', sans-serif;
+
+    &:hover{
+        color: white !important;
+    }
+}
+
+.btn-create-link-alternate
+{
+    //Marign Data
+	margin-left: $nav-spacing;
+	margin-right: $nav-spacing;
+
+    //Bootstrap Extensions
+	@include button-variant($color-leadsnare-button-alternate-text, $color-leadsnare-button-alternate-background, $color-leadsnare-button-alternate-border, 0px);
+	@include button-size($sizing-leadsnare-button-y * 1.35, $sizing-leadsnare-button-x * 3.95, $sizing-leadsnare-button-text, $sizing-leadsnare-button-lh, $sizing-leadsnare-button-br);
+    @extend .nav-link;
+    @extend .nav-item;
+
+    //Make cursor show link
+    cursor: pointer;
+
+    //Make color and background stuff
+    color : $color-leadsnare-button-alternate-text;
+    background: $color-leadsnare-button-alternate-background;
+    border-radius: 0px;
+    font-family: 'Roboto', sans-serif;
+
+    //Smaller font-size.
+    font-size: 16px;
 
     &:hover{
         color: white !important;

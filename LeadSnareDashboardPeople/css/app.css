@@ -5236,4 +5236,9 @@ a.bg-danger:focus, a.bg-danger:hover {
 .background-normal a {
   color: rgba(0, 0, 0, 0.8) !important; }
 
+.landing-page-header {
+  font-size: 3em; }
+.landing-page-subheader {
+  font-size: 1.5em; }
+
 /*# sourceMappingURL=app.css.map */
