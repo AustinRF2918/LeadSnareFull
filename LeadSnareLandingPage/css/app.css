@@ -5346,12 +5346,23 @@ a.bg-danger:focus, a.bg-danger:hover {
   color: rgba(0, 0, 0, 0.8) !important; }
 
 .landing-page-header {
+  line-height: 1em;
+  letter-spacing: 0.05em;
   margin-bottom: 40px;
-  font-size: 2.75em; }
+  font-size: 2.50em; }
 .landing-page-subheader {
+  letter-spacing: 0.03em;
   color: #636363;
   margin-top: 40px;
   margin-bottom: 40px;
   font-size: 1.5em; }
+
+.debug {
+  background: black;
+  border: 5px blue dashed; }
+
+@media screen and (max-width: 767px) {
+  .video-phone-hide {
+    display: none; } }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,0 +1,17 @@
+{
+  "name": "LeadSnareDashboardPeople",
+  "version": "0.0.0",
+  "description": "Leadsnare dashboard page",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "devDependencies": {
+    "express": "~4.13.4",
+    "connect-livereload": "~0.5.4",
+    "livereload": "~0.4.1",
+    "tiny-lr": "~0.2.1"
+  }
+}
