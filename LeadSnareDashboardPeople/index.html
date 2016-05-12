@@ -8,42 +8,49 @@
     <title>Dashboard</title>
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/app.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/app.css">
   </head>
   <body>
     <!-- NAVBAR DASHBOARD IS TO BE STYLIZED SEPERATELY -->
     <nav class="navbar navbar-dark bg-inverse navbar-dashboard">
       <div class="container">
-      <ul class="nav navbar-nav nav-extra-top-2">
+      <ul class="nav navbar-nav nav-extra-top-2 col-lg-6 navbar-dashboard-left">
         <li class="nav-item active inline">
 	  <img class="img-thumbnail" width="54px" height="54px" src="img/asset-leadsnare-logo.svg">
         </li>
-        <li class="nav-item m-l-3 active">
+        <li class="nav-item m-l-2 active">
           <a class="nav-link" href="#">Home
           <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item m-l-3">
+        <li class="nav-item m-l-2">
           <a class="nav-link" href="#">Links</a>
         </li>
-        <li class="nav-item m-l-3">
+        <li class="nav-item m-l-2">
           <a class="nav-link" href="#">People</a>
         </li>
-        <li class="nav-item m-l-3">
+        <li class="nav-item m-l-2">
           <a class="nav-link" href="#">Referrals</a>
         </li>
-        <li class="nav-item m-l-3">
+        <li class="nav-item m-l-2">
           <a class="nav-link" href="#">...</a>
         </li>
       </ul>
-          <div class="btn-group pull-xs-right" role="group" aria-label="Basic example">
-            <button type="button" class="btn btn-create-link m-l-1 m-r-3">Create A Link <i class="fa fa-arrow-right m-l-1" aria-hidden="true"></i>
-            </button>
-            <i class="fa fa-cog fa-lg m-l-1 nav-extra-top-1 m-x-1 glyphicon-subdued" aria-hidden="true"></i>
-            <i class="fa fa-question-circle-o  fa-lg m-l-1 nav-extra-top-1 m-x-1 glyphicon-subdued" aria-hidden="true"></i>
-            <i class="fa fa-share-square-o fa-lg m-l-1 nav-extra-top-1 m-x-1 glyphicon-subdued" aria-hidden="true"></i>
-        </div>
+      <div class="btn-group col-lg-6 block-sm-full col-sm-offset-0 col-xs-offset-0 col-md-offset-3 col-lg-offset-0 nav-extra-top-1" role="group" aria-label="Basic example">
+          <div class="text-xs-center pull-md-right">
+          <div class="col-xs-12">
+              <div class="col-sm-6">
+                  <button type="button" class="btn btn-create-link">Create A Link <i class="fa fa-arrow-right m-l-1" aria-hidden="true"></i></button>
+              </div>
+              <div class="col-sm-6 nav-extra-top-2">
+                  <i class="fa fa-cog fa-lg nav-extra-top-1 m-r-1 m-l-2 m-l-sm-0 glyphicon-subdued" aria-hidden="true"></i>
+                  <i class="fa fa-question-circle-o  fa-lg nav-extra-top-1 glyphicon-subdued" aria-hidden="true"></i>
+                  <i class="fa fa-share-square-o fa-lg nav-extra-top-1 m-l-1 glyphicon-subdued" aria-hidden="true"></i>
+              </div>
+          </div>
+          </div>
+       </div>
 	</div>
     </nav>
     <div class="container">
