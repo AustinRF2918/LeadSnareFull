@@ -1,8 +1,28 @@
 var gulp = require('gulp');
+var os = require('os');
 
-var EXPRESS_PORT = 4000;
+var EXPRESS_PORT = 4001;
 var EXPRESS_ROOT = __dirname;
 var LIVERELOAD_PORT = 35729;
+
+var getNetworkInformation = function(){
+    console.log("Starting express on local host: " + EXPRESS_PORT);
+    var interfaces = os.networkInterfaces();
+    var addresses = [];
+    for (var k in interfaces)
+    {
+        for (var k2 in interfaces[k])
+        {
+            var address = interfaces[k][k2];
+            if (address.family === 'IPv4' && !address.internal)
+            {
+                addresses.push(address.address);
+            }
+        }
+    }
+
+    return addresses;
+}
 
 function startExpress(){
     var express = require('express');
@@ -32,7 +52,9 @@ function notifyLivereload(event){
 
 gulp.task('default', function()
 {
+    console.log("Current network information")
+    console.log(getNetworkInformation());
     startExpress();
     startLiveReload();
-    gulp.watch(['*.html', 'css/*.css', 'js/**/*', 'js/*'], notifyLivereload);
+    gulp.watch(['*.html', 'css/*.css', 'js/**/*'], notifyLivereload);
 })
