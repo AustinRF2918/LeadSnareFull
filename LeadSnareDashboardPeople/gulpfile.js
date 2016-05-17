@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var os = require('os');
+var path = require('path');
 
 var EXPRESS_PORT = 4001;
 var EXPRESS_ROOT = __dirname;
@@ -40,8 +41,9 @@ function startLiveReload(){
 }
 
 function notifyLivereload(event){
-    var fileName = require('path').relative(EXPRESS_ROOT, event.path);
-    console.log("Change.");
+    var fileName = path.relative(EXPRESS_ROOT, event.path);
+    console.log("   Change on: " + event.path);
+    console.log("   File type: " + path.extname(event.path));
 
     lr.changed({
         body: {

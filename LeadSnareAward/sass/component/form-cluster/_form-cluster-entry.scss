@@ -1,0 +1,64 @@
+@mixin form-cluster-entry-generate($lineHeight, $formMargin, $formPadding, $size)
+{
+    @if ($size == xs or $size == sm or $size == md or $size == lg or $size == xl)
+    {
+        .form-cluster-entry-#{$size}
+        {
+            @if ($size == xs)
+            {
+                line-height: $lineHeight * .80;
+                margin: $formMargin;
+                padding: $formPadding;
+            }
+            @else if ($size == sm)
+            {
+                line-height: $lineHeight * .90;
+                margin: $formMargin;
+                padding: $formPadding;
+            }
+            @else if ($size == md)
+            {
+                line-height: $lineHeight * 1;
+                margin: $formMargin;
+                padding: $formPadding;
+            }
+            @else if ($size == lg)
+            {
+                line-height: $lineHeight * 1.10;
+                margin: $formMargin;
+                padding: $formPadding;
+            }
+            @else if ($size == xl)
+            {
+                line-height: $lineHeight * 1.20;
+                margin: $formMargin;
+                padding: $formPadding;
+            }
+        }
+    }
+    @else if ($size == null)
+    {
+    }
+    @else 
+    {
+        @error("Size must be valid Bootstrap 4 Breakpoint, or null.");
+    }
+
+}
+
+//Put this in seperate mixin file at production
+@include form-cluster-entry-generate(1.35, 5px, 5px, xs);
+@include form-cluster-entry-generate(1.45, 5px, 5px, sm);
+@include form-cluster-entry-generate(1.5, 5px, 5px, md);
+@include form-cluster-entry-generate(1.65, 5px, 5px, lg);
+@include form-cluster-entry-generate(1.75, 5px, 5px, xl);
+
+.form-cluster-entry-lg
+{
+    border-color: white;
+
+    &:active
+    {
+        border-color: #0290F5;
+    }
+}
