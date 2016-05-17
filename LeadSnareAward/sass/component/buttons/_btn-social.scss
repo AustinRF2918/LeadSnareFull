@@ -1,0 +1,39 @@
+//Spacing
+$nav-spacing: 0px;
+
+//Colors
+$color-leadsnare-button-social-background : lighten(grey, 70%);
+$color-leadsnare-button-social-text : darken(#f1f1f1, 55%);
+$color-leadsnare-button-social-border : darken(#f1f1f1, 55%);
+
+//Sizing
+$sizing-leadsnare-button-x: 20px;
+$sizing-leadsnare-button-y: 15px;
+$sizing-leadsnare-button-lh: 1em;
+
+//.!!!!!!!!
+//1!!!!!!!
+//NOT GLOBAL
+$sizing-leadsnare-button-br: 10px;
+//.!!!!!!!!
+//1!!!!!!!
+
+$sizing-leadsnare-button-text: 1.30em;
+
+.btn-social
+{
+    border-radius: 5px;
+    background: lighten(grey, 45%);
+    border-bottom: 2px solid lighten(grey, 30%);
+    border-top: 1px solid lighten(grey, 30%);
+    border-right: 1px solid lighten(grey, 30%);
+    border-left: 1px solid lighten(grey, 30%);
+    font-family: 'Roboto', sans-serif;
+    cursor: pointer;
+    @extend .nav-link;
+    @extend .nav-item;
+
+    &:hover{
+        background: lighten(grey, 35%);
+    }
+}

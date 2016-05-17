@@ -1,4 +1,58 @@
 .award-title
 {
-    height: 25vh;
+    height: 33vh;
+}
+
+.button-cluster
+{
+    @media screen and (min-width: 768px)
+    {
+        top: 15vh;
+    }
+
+    @media screen and (max-width: 500px)
+    {
+        top: 19vh;
+    }
+
+    @media screen and (max-width: 767px) and (min-width: 501px)
+    {
+        top: 23vh;
+    }
+
+}
+
+.content-window
+{
+    webkit-box-shadow: -1px 3px 16px 0px rgba(0,0,0,0.59);
+    -moz-box-shadow: -1px 3px 16px 0px rgba(0,0,0,0.59);
+    box-shadow: -1px 3px 16px 0px rgba(0,0,0,0.59);
+
+    border: 2px solid darken(white, 5%);
+    border-radius: 5px;
+    background: white;
+    color: lighten(grey, 5%);
+
+    @media screen and (min-width: 768px)
+    {
+        left: 33vw;
+        width: 34vw;
+        top: 20vh;
+        height: 30vh;
+    }
+    
+    @media screen and (max-width: 768px)
+    {
+        left: 2.5vw;
+        width: 95vw;
+        top: 29vh;
+        height: 30vh;
+    }
+
+    position: absolute;
+}
+
+.lighterGrey
+{
+    color: lighten(grey, 25%);
 }
