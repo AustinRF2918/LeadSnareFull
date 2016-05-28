@@ -30,10 +30,23 @@ $sizing-leadsnare-button-text: 1.30em;
     border-left: 1px solid lighten(grey, 30%);
     font-family: 'Roboto', sans-serif;
     cursor: pointer;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    
     @extend .nav-link;
     @extend .nav-item;
 
     &:hover{
-        background: lighten(grey, 35%);
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	-ms-transition: all 0.3s;
+	-o-transition: all 0.3s;
+	transition: all 0.3s;
+        background: lighten(grey, 25%);
     }
+
+    
 }

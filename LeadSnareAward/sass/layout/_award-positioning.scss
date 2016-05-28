@@ -7,7 +7,7 @@
 {
     @media screen and (min-width: 768px)
     {
-        top: 15vh;
+        top: 17vh;
     }
 
     @media screen and (max-width: 500px)
@@ -55,4 +55,28 @@
 .lighterGrey
 {
     color: lighten(grey, 25%);
+}
+
+.footer
+{
+    @media screen and (min-width: 768px)
+    {
+        top: 15vh * 1.6;
+    }
+
+    @media screen and (max-width: 500px)
+    {
+        top: 19vh * 1.1;
+    }
+
+    @media screen and (max-width: 767px) and (min-width: 501px)
+    {
+        top: 23vh * 1.6;
+    }
+
+    p{
+    margin: 0px;
+    padding: 0px;
+    }
+
 }
