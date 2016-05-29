@@ -1,10 +1,16 @@
 //Spacing
 $nav-spacing: 0px;
 
-//Colors
+//Colors (Normal)
 $color-leadsnare-button-background : rgba(255, 255, 255, 0.5);
 $color-leadsnare-button-text : darken(#f1f1f1, 55%);
 $color-leadsnare-button-border : darken(#f1f1f1, 55%);
+
+// (Active)
+$color-leadsnare-button-active-background : #3b5998;
+$color-leadsnare-button-active-text : darken(white, 5%);
+$color-leadsnare-button-active-hover-text : white;
+$color-leadsnare-button-active-border : #3b5998;
 
 //Sizing
 $sizing-leadsnare-button-x: 20px;
@@ -18,7 +24,7 @@ $sizing-leadsnare-button-br: 10px;
 //.!!!!!!!!
 //1!!!!!!!
 
-$sizing-leadsnare-button-text: 1.30em;
+$sizing-leadsnare-button-text: 16px;
 
 .btn-navbar
 {
@@ -37,6 +43,41 @@ $sizing-leadsnare-button-text: 1.30em;
 	margin-left: $nav-spacing;
 	margin-right: $nav-spacing;
 	@include button-variant($color-leadsnare-button-text, $color-leadsnare-button-background, $color-leadsnare-button-border, 0px);
+	@include button-size($sizing-leadsnare-button-y, $sizing-leadsnare-button-x, $sizing-leadsnare-button-text, $sizing-leadsnare-button-lh, $sizing-leadsnare-button-br);
+    }
+
+    &-brand
+    {
+	@extend .pull-xs-left;
+    }
+
+    &-other
+    {
+	@extend .pull-xs-right;
+    }
+}
+
+.btn-navbar-active
+{
+    font-family: 'Roboto', sans-serif;
+    @extend .nav-link;
+    @extend .nav-item;
+    color : $color-leadsnare-button-text;
+
+    &:hover{
+	color: white !important;
+	text-decoration: none;
+	cursor: pointer;
+	a{
+	    text-decoration: none;
+	}
+    }
+
+    &-brand, &-other
+    {
+	margin-left: $nav-spacing;
+	margin-right: $nav-spacing;
+	@include button-variant($color-leadsnare-button-active-text, $color-leadsnare-button-active-background, $color-leadsnare-button-active-border, 0px);
 	@include button-size($sizing-leadsnare-button-y, $sizing-leadsnare-button-x, $sizing-leadsnare-button-text, $sizing-leadsnare-button-lh, $sizing-leadsnare-button-br);
     }
 
