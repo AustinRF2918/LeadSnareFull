@@ -2696,34 +2696,43 @@ input[type="button"].btn-block {
   margin-bottom: 0;
   list-style: none; }
 
-.nav-link, .btn-navbar, .btn-create-link, .btn-create-link-alternate {
+.nav-link, .btn-navbar, .btn-navbar-active, .btn-create-link, .btn-create-link-alternate {
   display: inline-block; }
-  .nav-link:focus, .btn-navbar:focus, .btn-create-link:focus, .btn-create-link-alternate:focus, .nav-link:hover, .btn-navbar:hover, .btn-create-link:hover, .btn-create-link-alternate:hover {
+  .nav-link:focus, .btn-navbar:focus, .btn-navbar-active:focus, .btn-create-link:focus, .btn-create-link-alternate:focus, .nav-link:hover, .btn-navbar:hover, .btn-navbar-active:hover, .btn-create-link:hover, .btn-create-link-alternate:hover {
     text-decoration: none; }
-  .nav-link.disabled, .disabled.btn-navbar, .disabled.btn-create-link, .disabled.btn-create-link-alternate {
+  .nav-link.disabled, .disabled.btn-navbar, .disabled.btn-navbar-active, .disabled.btn-create-link, .disabled.btn-create-link-alternate {
     color: #818a91; }
-    .nav-link.disabled, .disabled.btn-navbar, .disabled.btn-create-link, .disabled.btn-create-link-alternate, .nav-link.disabled:focus, .disabled.btn-navbar:focus, .disabled.btn-create-link:focus, .disabled.btn-create-link-alternate:focus, .nav-link.disabled:hover, .disabled.btn-navbar:hover, .disabled.btn-create-link:hover, .disabled.btn-create-link-alternate:hover {
+    .nav-link.disabled, .disabled.btn-navbar, .disabled.btn-navbar-active, .disabled.btn-create-link, .disabled.btn-create-link-alternate, .nav-link.disabled:focus, .disabled.btn-navbar:focus, .disabled.btn-navbar-active:focus, .disabled.btn-create-link:focus, .disabled.btn-create-link-alternate:focus, .nav-link.disabled:hover, .disabled.btn-navbar:hover, .disabled.btn-navbar-active:hover, .disabled.btn-create-link:hover, .disabled.btn-create-link-alternate:hover {
       color: #818a91;
       cursor: not-allowed;
       background-color: transparent; }
 
-.nav-inline .nav-item, .nav-inline .btn-navbar, .nav-inline .btn-create-link, .nav-inline .btn-create-link-alternate {
+.nav-inline .nav-item, .nav-inline .btn-navbar, .nav-inline .btn-navbar-active, .nav-inline .btn-create-link, .nav-inline .btn-create-link-alternate {
   display: inline-block; }
-.nav-inline .nav-item + .nav-item, .nav-inline .btn-navbar + .nav-item, .nav-inline .btn-create-link + .nav-item, .nav-inline .btn-create-link-alternate + .nav-item, .nav-inline .nav-item + .btn-navbar, .nav-inline .btn-navbar + .btn-navbar, .nav-inline .btn-create-link + .btn-navbar, .nav-inline .btn-create-link-alternate + .btn-navbar, .nav-inline .nav-item + .btn-create-link, .nav-inline .btn-navbar + .btn-create-link, .nav-inline .btn-create-link + .btn-create-link, .nav-inline .btn-create-link-alternate + .btn-create-link, .nav-inline .nav-item + .btn-create-link-alternate, .nav-inline .btn-navbar + .btn-create-link-alternate, .nav-inline .btn-create-link + .btn-create-link-alternate, .nav-inline .btn-create-link-alternate + .btn-create-link-alternate,
+.nav-inline .nav-item + .nav-item, .nav-inline .btn-navbar + .nav-item, .nav-inline .btn-navbar-active + .nav-item, .nav-inline .btn-create-link + .nav-item, .nav-inline .btn-create-link-alternate + .nav-item, .nav-inline .nav-item + .btn-navbar, .nav-inline .btn-navbar + .btn-navbar, .nav-inline .btn-navbar-active + .btn-navbar, .nav-inline .btn-create-link + .btn-navbar, .nav-inline .btn-create-link-alternate + .btn-navbar, .nav-inline .nav-item + .btn-navbar-active, .nav-inline .btn-navbar + .btn-navbar-active, .nav-inline .btn-navbar-active + .btn-navbar-active, .nav-inline .btn-create-link + .btn-navbar-active, .nav-inline .btn-create-link-alternate + .btn-navbar-active, .nav-inline .nav-item + .btn-create-link, .nav-inline .btn-navbar + .btn-create-link, .nav-inline .btn-navbar-active + .btn-create-link, .nav-inline .btn-create-link + .btn-create-link, .nav-inline .btn-create-link-alternate + .btn-create-link, .nav-inline .nav-item + .btn-create-link-alternate, .nav-inline .btn-navbar + .btn-create-link-alternate, .nav-inline .btn-navbar-active + .btn-create-link-alternate, .nav-inline .btn-create-link + .btn-create-link-alternate, .nav-inline .btn-create-link-alternate + .btn-create-link-alternate,
 .nav-inline .nav-link + .nav-link,
 .nav-inline .btn-navbar + .nav-link,
+.nav-inline .btn-navbar-active + .nav-link,
 .nav-inline .btn-create-link + .nav-link,
 .nav-inline .btn-create-link-alternate + .nav-link,
 .nav-inline .nav-link + .btn-navbar,
 .nav-inline .btn-navbar + .btn-navbar,
+.nav-inline .btn-navbar-active + .btn-navbar,
 .nav-inline .btn-create-link + .btn-navbar,
 .nav-inline .btn-create-link-alternate + .btn-navbar,
+.nav-inline .nav-link + .btn-navbar-active,
+.nav-inline .btn-navbar + .btn-navbar-active,
+.nav-inline .btn-navbar-active + .btn-navbar-active,
+.nav-inline .btn-create-link + .btn-navbar-active,
+.nav-inline .btn-create-link-alternate + .btn-navbar-active,
 .nav-inline .nav-link + .btn-create-link,
 .nav-inline .btn-navbar + .btn-create-link,
+.nav-inline .btn-navbar-active + .btn-create-link,
 .nav-inline .btn-create-link + .btn-create-link,
 .nav-inline .btn-create-link-alternate + .btn-create-link,
 .nav-inline .nav-link + .btn-create-link-alternate,
 .nav-inline .btn-navbar + .btn-create-link-alternate,
+.nav-inline .btn-navbar-active + .btn-create-link-alternate,
 .nav-inline .btn-create-link + .btn-create-link-alternate,
 .nav-inline .btn-create-link-alternate + .btn-create-link-alternate {
   margin-left: 1rem; }
@@ -2734,69 +2743,96 @@ input[type="button"].btn-block {
     content: "";
     display: table;
     clear: both; }
-  .nav-tabs .nav-item, .nav-tabs .btn-navbar, .nav-tabs .btn-create-link, .nav-tabs .btn-create-link-alternate {
+  .nav-tabs .nav-item, .nav-tabs .btn-navbar, .nav-tabs .btn-navbar-active, .nav-tabs .btn-create-link, .nav-tabs .btn-create-link-alternate {
     float: left;
     margin-bottom: -1px; }
-    .nav-tabs .nav-item + .nav-item, .nav-tabs .btn-navbar + .nav-item, .nav-tabs .btn-create-link + .nav-item, .nav-tabs .btn-create-link-alternate + .nav-item, .nav-tabs .nav-item + .btn-navbar, .nav-tabs .btn-navbar + .btn-navbar, .nav-tabs .btn-create-link + .btn-navbar, .nav-tabs .btn-create-link-alternate + .btn-navbar, .nav-tabs .nav-item + .btn-create-link, .nav-tabs .btn-navbar + .btn-create-link, .nav-tabs .btn-create-link + .btn-create-link, .nav-tabs .btn-create-link-alternate + .btn-create-link, .nav-tabs .nav-item + .btn-create-link-alternate, .nav-tabs .btn-navbar + .btn-create-link-alternate, .nav-tabs .btn-create-link + .btn-create-link-alternate, .nav-tabs .btn-create-link-alternate + .btn-create-link-alternate {
+    .nav-tabs .nav-item + .nav-item, .nav-tabs .btn-navbar + .nav-item, .nav-tabs .btn-navbar-active + .nav-item, .nav-tabs .btn-create-link + .nav-item, .nav-tabs .btn-create-link-alternate + .nav-item, .nav-tabs .nav-item + .btn-navbar, .nav-tabs .btn-navbar + .btn-navbar, .nav-tabs .btn-navbar-active + .btn-navbar, .nav-tabs .btn-create-link + .btn-navbar, .nav-tabs .btn-create-link-alternate + .btn-navbar, .nav-tabs .nav-item + .btn-navbar-active, .nav-tabs .btn-navbar + .btn-navbar-active, .nav-tabs .btn-navbar-active + .btn-navbar-active, .nav-tabs .btn-create-link + .btn-navbar-active, .nav-tabs .btn-create-link-alternate + .btn-navbar-active, .nav-tabs .nav-item + .btn-create-link, .nav-tabs .btn-navbar + .btn-create-link, .nav-tabs .btn-navbar-active + .btn-create-link, .nav-tabs .btn-create-link + .btn-create-link, .nav-tabs .btn-create-link-alternate + .btn-create-link, .nav-tabs .nav-item + .btn-create-link-alternate, .nav-tabs .btn-navbar + .btn-create-link-alternate, .nav-tabs .btn-navbar-active + .btn-create-link-alternate, .nav-tabs .btn-create-link + .btn-create-link-alternate, .nav-tabs .btn-create-link-alternate + .btn-create-link-alternate {
       margin-left: .2rem; }
-  .nav-tabs .nav-link, .nav-tabs .btn-navbar, .nav-tabs .btn-create-link, .nav-tabs .btn-create-link-alternate {
+  .nav-tabs .nav-link, .nav-tabs .btn-navbar, .nav-tabs .btn-navbar-active, .nav-tabs .btn-create-link, .nav-tabs .btn-create-link-alternate {
     display: block;
     padding: 0.5em 1em;
     border: 1px solid transparent;
     border-radius: 0.25rem 0.25rem 0 0; }
-    .nav-tabs .nav-link:focus, .nav-tabs .btn-navbar:focus, .nav-tabs .btn-create-link:focus, .nav-tabs .btn-create-link-alternate:focus, .nav-tabs .nav-link:hover, .nav-tabs .btn-navbar:hover, .nav-tabs .btn-create-link:hover, .nav-tabs .btn-create-link-alternate:hover {
+    .nav-tabs .nav-link:focus, .nav-tabs .btn-navbar:focus, .nav-tabs .btn-navbar-active:focus, .nav-tabs .btn-create-link:focus, .nav-tabs .btn-create-link-alternate:focus, .nav-tabs .nav-link:hover, .nav-tabs .btn-navbar:hover, .nav-tabs .btn-navbar-active:hover, .nav-tabs .btn-create-link:hover, .nav-tabs .btn-create-link-alternate:hover {
       border-color: #eceeef #eceeef #ddd; }
-    .nav-tabs .nav-link.disabled, .nav-tabs .disabled.btn-navbar, .nav-tabs .disabled.btn-create-link, .nav-tabs .disabled.btn-create-link-alternate, .nav-tabs .nav-link.disabled:focus, .nav-tabs .disabled.btn-navbar:focus, .nav-tabs .disabled.btn-create-link:focus, .nav-tabs .disabled.btn-create-link-alternate:focus, .nav-tabs .nav-link.disabled:hover, .nav-tabs .disabled.btn-navbar:hover, .nav-tabs .disabled.btn-create-link:hover, .nav-tabs .disabled.btn-create-link-alternate:hover {
+    .nav-tabs .nav-link.disabled, .nav-tabs .disabled.btn-navbar, .nav-tabs .disabled.btn-navbar-active, .nav-tabs .disabled.btn-create-link, .nav-tabs .disabled.btn-create-link-alternate, .nav-tabs .nav-link.disabled:focus, .nav-tabs .disabled.btn-navbar:focus, .nav-tabs .disabled.btn-navbar-active:focus, .nav-tabs .disabled.btn-create-link:focus, .nav-tabs .disabled.btn-create-link-alternate:focus, .nav-tabs .nav-link.disabled:hover, .nav-tabs .disabled.btn-navbar:hover, .nav-tabs .disabled.btn-navbar-active:hover, .nav-tabs .disabled.btn-create-link:hover, .nav-tabs .disabled.btn-create-link-alternate:hover {
       color: #818a91;
       background-color: transparent;
       border-color: transparent; }
-  .nav-tabs .nav-link.active, .nav-tabs .active.btn-navbar, .nav-tabs .active.btn-create-link, .nav-tabs .active.btn-create-link-alternate, .nav-tabs .nav-link.active:focus, .nav-tabs .active.btn-navbar:focus, .nav-tabs .active.btn-create-link:focus, .nav-tabs .active.btn-create-link-alternate:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .active.btn-navbar:hover, .nav-tabs .active.btn-create-link:hover, .nav-tabs .active.btn-create-link-alternate:hover,
+  .nav-tabs .nav-link.active, .nav-tabs .active.btn-navbar, .nav-tabs .active.btn-navbar-active, .nav-tabs .active.btn-create-link, .nav-tabs .active.btn-create-link-alternate, .nav-tabs .nav-link.active:focus, .nav-tabs .active.btn-navbar:focus, .nav-tabs .active.btn-navbar-active:focus, .nav-tabs .active.btn-create-link:focus, .nav-tabs .active.btn-create-link-alternate:focus, .nav-tabs .nav-link.active:hover, .nav-tabs .active.btn-navbar:hover, .nav-tabs .active.btn-navbar-active:hover, .nav-tabs .active.btn-create-link:hover, .nav-tabs .active.btn-create-link-alternate:hover,
   .nav-tabs .nav-item.open .nav-link,
   .nav-tabs .open.btn-navbar .nav-link,
+  .nav-tabs .open.btn-navbar-active .nav-link,
   .nav-tabs .open.btn-create-link .nav-link,
   .nav-tabs .open.btn-create-link-alternate .nav-link,
   .nav-tabs .nav-item.open .btn-navbar,
   .nav-tabs .open.btn-navbar .btn-navbar,
+  .nav-tabs .open.btn-navbar-active .btn-navbar,
   .nav-tabs .open.btn-create-link .btn-navbar,
   .nav-tabs .open.btn-create-link-alternate .btn-navbar,
+  .nav-tabs .nav-item.open .btn-navbar-active,
+  .nav-tabs .open.btn-navbar .btn-navbar-active,
+  .nav-tabs .open.btn-navbar-active .btn-navbar-active,
+  .nav-tabs .open.btn-create-link .btn-navbar-active,
+  .nav-tabs .open.btn-create-link-alternate .btn-navbar-active,
   .nav-tabs .nav-item.open .btn-create-link,
   .nav-tabs .open.btn-navbar .btn-create-link,
+  .nav-tabs .open.btn-navbar-active .btn-create-link,
   .nav-tabs .open.btn-create-link .btn-create-link,
   .nav-tabs .open.btn-create-link-alternate .btn-create-link,
   .nav-tabs .nav-item.open .btn-create-link-alternate,
   .nav-tabs .open.btn-navbar .btn-create-link-alternate,
+  .nav-tabs .open.btn-navbar-active .btn-create-link-alternate,
   .nav-tabs .open.btn-create-link .btn-create-link-alternate,
   .nav-tabs .open.btn-create-link-alternate .btn-create-link-alternate,
   .nav-tabs .nav-item.open .nav-link:focus,
   .nav-tabs .open.btn-navbar .nav-link:focus,
+  .nav-tabs .open.btn-navbar-active .nav-link:focus,
   .nav-tabs .open.btn-create-link .nav-link:focus,
   .nav-tabs .open.btn-create-link-alternate .nav-link:focus,
   .nav-tabs .nav-item.open .btn-navbar:focus,
   .nav-tabs .open.btn-navbar .btn-navbar:focus,
+  .nav-tabs .open.btn-navbar-active .btn-navbar:focus,
   .nav-tabs .open.btn-create-link .btn-navbar:focus,
   .nav-tabs .open.btn-create-link-alternate .btn-navbar:focus,
+  .nav-tabs .nav-item.open .btn-navbar-active:focus,
+  .nav-tabs .open.btn-navbar .btn-navbar-active:focus,
+  .nav-tabs .open.btn-navbar-active .btn-navbar-active:focus,
+  .nav-tabs .open.btn-create-link .btn-navbar-active:focus,
+  .nav-tabs .open.btn-create-link-alternate .btn-navbar-active:focus,
   .nav-tabs .nav-item.open .btn-create-link:focus,
   .nav-tabs .open.btn-navbar .btn-create-link:focus,
+  .nav-tabs .open.btn-navbar-active .btn-create-link:focus,
   .nav-tabs .open.btn-create-link .btn-create-link:focus,
   .nav-tabs .open.btn-create-link-alternate .btn-create-link:focus,
   .nav-tabs .nav-item.open .btn-create-link-alternate:focus,
   .nav-tabs .open.btn-navbar .btn-create-link-alternate:focus,
+  .nav-tabs .open.btn-navbar-active .btn-create-link-alternate:focus,
   .nav-tabs .open.btn-create-link .btn-create-link-alternate:focus,
   .nav-tabs .open.btn-create-link-alternate .btn-create-link-alternate:focus,
   .nav-tabs .nav-item.open .nav-link:hover,
   .nav-tabs .open.btn-navbar .nav-link:hover,
+  .nav-tabs .open.btn-navbar-active .nav-link:hover,
   .nav-tabs .open.btn-create-link .nav-link:hover,
   .nav-tabs .open.btn-create-link-alternate .nav-link:hover,
   .nav-tabs .nav-item.open .btn-navbar:hover,
   .nav-tabs .open.btn-navbar .btn-navbar:hover,
+  .nav-tabs .open.btn-navbar-active .btn-navbar:hover,
   .nav-tabs .open.btn-create-link .btn-navbar:hover,
   .nav-tabs .open.btn-create-link-alternate .btn-navbar:hover,
+  .nav-tabs .nav-item.open .btn-navbar-active:hover,
+  .nav-tabs .open.btn-navbar .btn-navbar-active:hover,
+  .nav-tabs .open.btn-navbar-active .btn-navbar-active:hover,
+  .nav-tabs .open.btn-create-link .btn-navbar-active:hover,
+  .nav-tabs .open.btn-create-link-alternate .btn-navbar-active:hover,
   .nav-tabs .nav-item.open .btn-create-link:hover,
   .nav-tabs .open.btn-navbar .btn-create-link:hover,
+  .nav-tabs .open.btn-navbar-active .btn-create-link:hover,
   .nav-tabs .open.btn-create-link .btn-create-link:hover,
   .nav-tabs .open.btn-create-link-alternate .btn-create-link:hover,
   .nav-tabs .nav-item.open .btn-create-link-alternate:hover,
   .nav-tabs .open.btn-navbar .btn-create-link-alternate:hover,
+  .nav-tabs .open.btn-navbar-active .btn-create-link-alternate:hover,
   .nav-tabs .open.btn-create-link .btn-create-link-alternate:hover,
   .nav-tabs .open.btn-create-link-alternate .btn-create-link-alternate:hover {
     color: #55595c;
@@ -2807,71 +2843,98 @@ input[type="button"].btn-block {
   content: "";
   display: table;
   clear: both; }
-.nav-pills .nav-item, .nav-pills .btn-navbar, .nav-pills .btn-create-link, .nav-pills .btn-create-link-alternate {
+.nav-pills .nav-item, .nav-pills .btn-navbar, .nav-pills .btn-navbar-active, .nav-pills .btn-create-link, .nav-pills .btn-create-link-alternate {
   float: left; }
-  .nav-pills .nav-item + .nav-item, .nav-pills .btn-navbar + .nav-item, .nav-pills .btn-create-link + .nav-item, .nav-pills .btn-create-link-alternate + .nav-item, .nav-pills .nav-item + .btn-navbar, .nav-pills .btn-navbar + .btn-navbar, .nav-pills .btn-create-link + .btn-navbar, .nav-pills .btn-create-link-alternate + .btn-navbar, .nav-pills .nav-item + .btn-create-link, .nav-pills .btn-navbar + .btn-create-link, .nav-pills .btn-create-link + .btn-create-link, .nav-pills .btn-create-link-alternate + .btn-create-link, .nav-pills .nav-item + .btn-create-link-alternate, .nav-pills .btn-navbar + .btn-create-link-alternate, .nav-pills .btn-create-link + .btn-create-link-alternate, .nav-pills .btn-create-link-alternate + .btn-create-link-alternate {
+  .nav-pills .nav-item + .nav-item, .nav-pills .btn-navbar + .nav-item, .nav-pills .btn-navbar-active + .nav-item, .nav-pills .btn-create-link + .nav-item, .nav-pills .btn-create-link-alternate + .nav-item, .nav-pills .nav-item + .btn-navbar, .nav-pills .btn-navbar + .btn-navbar, .nav-pills .btn-navbar-active + .btn-navbar, .nav-pills .btn-create-link + .btn-navbar, .nav-pills .btn-create-link-alternate + .btn-navbar, .nav-pills .nav-item + .btn-navbar-active, .nav-pills .btn-navbar + .btn-navbar-active, .nav-pills .btn-navbar-active + .btn-navbar-active, .nav-pills .btn-create-link + .btn-navbar-active, .nav-pills .btn-create-link-alternate + .btn-navbar-active, .nav-pills .nav-item + .btn-create-link, .nav-pills .btn-navbar + .btn-create-link, .nav-pills .btn-navbar-active + .btn-create-link, .nav-pills .btn-create-link + .btn-create-link, .nav-pills .btn-create-link-alternate + .btn-create-link, .nav-pills .nav-item + .btn-create-link-alternate, .nav-pills .btn-navbar + .btn-create-link-alternate, .nav-pills .btn-navbar-active + .btn-create-link-alternate, .nav-pills .btn-create-link + .btn-create-link-alternate, .nav-pills .btn-create-link-alternate + .btn-create-link-alternate {
     margin-left: .2rem; }
-.nav-pills .nav-link, .nav-pills .btn-navbar, .nav-pills .btn-create-link, .nav-pills .btn-create-link-alternate {
+.nav-pills .nav-link, .nav-pills .btn-navbar, .nav-pills .btn-navbar-active, .nav-pills .btn-create-link, .nav-pills .btn-create-link-alternate {
   display: block;
   padding: 0.5em 1em;
   border-radius: 0.25rem; }
-.nav-pills .nav-link.active, .nav-pills .active.btn-navbar, .nav-pills .active.btn-create-link, .nav-pills .active.btn-create-link-alternate, .nav-pills .nav-link.active:focus, .nav-pills .active.btn-navbar:focus, .nav-pills .active.btn-create-link:focus, .nav-pills .active.btn-create-link-alternate:focus, .nav-pills .nav-link.active:hover, .nav-pills .active.btn-navbar:hover, .nav-pills .active.btn-create-link:hover, .nav-pills .active.btn-create-link-alternate:hover,
+.nav-pills .nav-link.active, .nav-pills .active.btn-navbar, .nav-pills .active.btn-navbar-active, .nav-pills .active.btn-create-link, .nav-pills .active.btn-create-link-alternate, .nav-pills .nav-link.active:focus, .nav-pills .active.btn-navbar:focus, .nav-pills .active.btn-navbar-active:focus, .nav-pills .active.btn-create-link:focus, .nav-pills .active.btn-create-link-alternate:focus, .nav-pills .nav-link.active:hover, .nav-pills .active.btn-navbar:hover, .nav-pills .active.btn-navbar-active:hover, .nav-pills .active.btn-create-link:hover, .nav-pills .active.btn-create-link-alternate:hover,
 .nav-pills .nav-item.open .nav-link,
 .nav-pills .open.btn-navbar .nav-link,
+.nav-pills .open.btn-navbar-active .nav-link,
 .nav-pills .open.btn-create-link .nav-link,
 .nav-pills .open.btn-create-link-alternate .nav-link,
 .nav-pills .nav-item.open .btn-navbar,
 .nav-pills .open.btn-navbar .btn-navbar,
+.nav-pills .open.btn-navbar-active .btn-navbar,
 .nav-pills .open.btn-create-link .btn-navbar,
 .nav-pills .open.btn-create-link-alternate .btn-navbar,
+.nav-pills .nav-item.open .btn-navbar-active,
+.nav-pills .open.btn-navbar .btn-navbar-active,
+.nav-pills .open.btn-navbar-active .btn-navbar-active,
+.nav-pills .open.btn-create-link .btn-navbar-active,
+.nav-pills .open.btn-create-link-alternate .btn-navbar-active,
 .nav-pills .nav-item.open .btn-create-link,
 .nav-pills .open.btn-navbar .btn-create-link,
+.nav-pills .open.btn-navbar-active .btn-create-link,
 .nav-pills .open.btn-create-link .btn-create-link,
 .nav-pills .open.btn-create-link-alternate .btn-create-link,
 .nav-pills .nav-item.open .btn-create-link-alternate,
 .nav-pills .open.btn-navbar .btn-create-link-alternate,
+.nav-pills .open.btn-navbar-active .btn-create-link-alternate,
 .nav-pills .open.btn-create-link .btn-create-link-alternate,
 .nav-pills .open.btn-create-link-alternate .btn-create-link-alternate,
 .nav-pills .nav-item.open .nav-link:focus,
 .nav-pills .open.btn-navbar .nav-link:focus,
+.nav-pills .open.btn-navbar-active .nav-link:focus,
 .nav-pills .open.btn-create-link .nav-link:focus,
 .nav-pills .open.btn-create-link-alternate .nav-link:focus,
 .nav-pills .nav-item.open .btn-navbar:focus,
 .nav-pills .open.btn-navbar .btn-navbar:focus,
+.nav-pills .open.btn-navbar-active .btn-navbar:focus,
 .nav-pills .open.btn-create-link .btn-navbar:focus,
 .nav-pills .open.btn-create-link-alternate .btn-navbar:focus,
+.nav-pills .nav-item.open .btn-navbar-active:focus,
+.nav-pills .open.btn-navbar .btn-navbar-active:focus,
+.nav-pills .open.btn-navbar-active .btn-navbar-active:focus,
+.nav-pills .open.btn-create-link .btn-navbar-active:focus,
+.nav-pills .open.btn-create-link-alternate .btn-navbar-active:focus,
 .nav-pills .nav-item.open .btn-create-link:focus,
 .nav-pills .open.btn-navbar .btn-create-link:focus,
+.nav-pills .open.btn-navbar-active .btn-create-link:focus,
 .nav-pills .open.btn-create-link .btn-create-link:focus,
 .nav-pills .open.btn-create-link-alternate .btn-create-link:focus,
 .nav-pills .nav-item.open .btn-create-link-alternate:focus,
 .nav-pills .open.btn-navbar .btn-create-link-alternate:focus,
+.nav-pills .open.btn-navbar-active .btn-create-link-alternate:focus,
 .nav-pills .open.btn-create-link .btn-create-link-alternate:focus,
 .nav-pills .open.btn-create-link-alternate .btn-create-link-alternate:focus,
 .nav-pills .nav-item.open .nav-link:hover,
 .nav-pills .open.btn-navbar .nav-link:hover,
+.nav-pills .open.btn-navbar-active .nav-link:hover,
 .nav-pills .open.btn-create-link .nav-link:hover,
 .nav-pills .open.btn-create-link-alternate .nav-link:hover,
 .nav-pills .nav-item.open .btn-navbar:hover,
 .nav-pills .open.btn-navbar .btn-navbar:hover,
+.nav-pills .open.btn-navbar-active .btn-navbar:hover,
 .nav-pills .open.btn-create-link .btn-navbar:hover,
 .nav-pills .open.btn-create-link-alternate .btn-navbar:hover,
+.nav-pills .nav-item.open .btn-navbar-active:hover,
+.nav-pills .open.btn-navbar .btn-navbar-active:hover,
+.nav-pills .open.btn-navbar-active .btn-navbar-active:hover,
+.nav-pills .open.btn-create-link .btn-navbar-active:hover,
+.nav-pills .open.btn-create-link-alternate .btn-navbar-active:hover,
 .nav-pills .nav-item.open .btn-create-link:hover,
 .nav-pills .open.btn-navbar .btn-create-link:hover,
+.nav-pills .open.btn-navbar-active .btn-create-link:hover,
 .nav-pills .open.btn-create-link .btn-create-link:hover,
 .nav-pills .open.btn-create-link-alternate .btn-create-link:hover,
 .nav-pills .nav-item.open .btn-create-link-alternate:hover,
 .nav-pills .open.btn-navbar .btn-create-link-alternate:hover,
+.nav-pills .open.btn-navbar-active .btn-create-link-alternate:hover,
 .nav-pills .open.btn-create-link .btn-create-link-alternate:hover,
 .nav-pills .open.btn-create-link-alternate .btn-create-link-alternate:hover {
   color: #fff;
   cursor: default;
   background-color: #0275d8; }
 
-.nav-stacked .nav-item, .nav-stacked .btn-navbar, .nav-stacked .btn-create-link, .nav-stacked .btn-create-link-alternate {
+.nav-stacked .nav-item, .nav-stacked .btn-navbar, .nav-stacked .btn-navbar-active, .nav-stacked .btn-create-link, .nav-stacked .btn-create-link-alternate {
   display: block;
   float: none; }
-  .nav-stacked .nav-item + .nav-item, .nav-stacked .btn-navbar + .nav-item, .nav-stacked .btn-create-link + .nav-item, .nav-stacked .btn-create-link-alternate + .nav-item, .nav-stacked .nav-item + .btn-navbar, .nav-stacked .btn-navbar + .btn-navbar, .nav-stacked .btn-create-link + .btn-navbar, .nav-stacked .btn-create-link-alternate + .btn-navbar, .nav-stacked .nav-item + .btn-create-link, .nav-stacked .btn-navbar + .btn-create-link, .nav-stacked .btn-create-link + .btn-create-link, .nav-stacked .btn-create-link-alternate + .btn-create-link, .nav-stacked .nav-item + .btn-create-link-alternate, .nav-stacked .btn-navbar + .btn-create-link-alternate, .nav-stacked .btn-create-link + .btn-create-link-alternate, .nav-stacked .btn-create-link-alternate + .btn-create-link-alternate {
+  .nav-stacked .nav-item + .nav-item, .nav-stacked .btn-navbar + .nav-item, .nav-stacked .btn-navbar-active + .nav-item, .nav-stacked .btn-create-link + .nav-item, .nav-stacked .btn-create-link-alternate + .nav-item, .nav-stacked .nav-item + .btn-navbar, .nav-stacked .btn-navbar + .btn-navbar, .nav-stacked .btn-navbar-active + .btn-navbar, .nav-stacked .btn-create-link + .btn-navbar, .nav-stacked .btn-create-link-alternate + .btn-navbar, .nav-stacked .nav-item + .btn-navbar-active, .nav-stacked .btn-navbar + .btn-navbar-active, .nav-stacked .btn-navbar-active + .btn-navbar-active, .nav-stacked .btn-create-link + .btn-navbar-active, .nav-stacked .btn-create-link-alternate + .btn-navbar-active, .nav-stacked .nav-item + .btn-create-link, .nav-stacked .btn-navbar + .btn-create-link, .nav-stacked .btn-navbar-active + .btn-create-link, .nav-stacked .btn-create-link + .btn-create-link, .nav-stacked .btn-create-link-alternate + .btn-create-link, .nav-stacked .nav-item + .btn-create-link-alternate, .nav-stacked .btn-navbar + .btn-create-link-alternate, .nav-stacked .btn-navbar-active + .btn-create-link-alternate, .nav-stacked .btn-create-link + .btn-create-link-alternate, .nav-stacked .btn-create-link-alternate + .btn-create-link-alternate {
     margin-top: .2rem;
     margin-left: 0; }
 
@@ -2970,60 +3033,69 @@ input[type="button"].btn-block {
   .navbar-toggleable-md {
     display: block !important; } }
 
-.navbar-nav .nav-item, .navbar-nav .btn-navbar, .navbar-nav .btn-create-link, .navbar-nav .btn-create-link-alternate {
+.navbar-nav .nav-item, .navbar-nav .btn-navbar, .navbar-nav .btn-navbar-active, .navbar-nav .btn-create-link, .navbar-nav .btn-create-link-alternate {
   float: left; }
-.navbar-nav .nav-link, .navbar-nav .btn-navbar, .navbar-nav .btn-create-link, .navbar-nav .btn-create-link-alternate {
+.navbar-nav .nav-link, .navbar-nav .btn-navbar, .navbar-nav .btn-navbar-active, .navbar-nav .btn-create-link, .navbar-nav .btn-create-link-alternate {
   display: block;
   padding-top: .425rem;
   padding-bottom: .425rem; }
-  .navbar-nav .nav-link + .nav-link, .navbar-nav .btn-navbar + .nav-link, .navbar-nav .btn-create-link + .nav-link, .navbar-nav .btn-create-link-alternate + .nav-link, .navbar-nav .nav-link + .btn-navbar, .navbar-nav .btn-navbar + .btn-navbar, .navbar-nav .btn-create-link + .btn-navbar, .navbar-nav .btn-create-link-alternate + .btn-navbar, .navbar-nav .nav-link + .btn-create-link, .navbar-nav .btn-navbar + .btn-create-link, .navbar-nav .btn-create-link + .btn-create-link, .navbar-nav .btn-create-link-alternate + .btn-create-link, .navbar-nav .nav-link + .btn-create-link-alternate, .navbar-nav .btn-navbar + .btn-create-link-alternate, .navbar-nav .btn-create-link + .btn-create-link-alternate, .navbar-nav .btn-create-link-alternate + .btn-create-link-alternate {
+  .navbar-nav .nav-link + .nav-link, .navbar-nav .btn-navbar + .nav-link, .navbar-nav .btn-navbar-active + .nav-link, .navbar-nav .btn-create-link + .nav-link, .navbar-nav .btn-create-link-alternate + .nav-link, .navbar-nav .nav-link + .btn-navbar, .navbar-nav .btn-navbar + .btn-navbar, .navbar-nav .btn-navbar-active + .btn-navbar, .navbar-nav .btn-create-link + .btn-navbar, .navbar-nav .btn-create-link-alternate + .btn-navbar, .navbar-nav .nav-link + .btn-navbar-active, .navbar-nav .btn-navbar + .btn-navbar-active, .navbar-nav .btn-navbar-active + .btn-navbar-active, .navbar-nav .btn-create-link + .btn-navbar-active, .navbar-nav .btn-create-link-alternate + .btn-navbar-active, .navbar-nav .nav-link + .btn-create-link, .navbar-nav .btn-navbar + .btn-create-link, .navbar-nav .btn-navbar-active + .btn-create-link, .navbar-nav .btn-create-link + .btn-create-link, .navbar-nav .btn-create-link-alternate + .btn-create-link, .navbar-nav .nav-link + .btn-create-link-alternate, .navbar-nav .btn-navbar + .btn-create-link-alternate, .navbar-nav .btn-navbar-active + .btn-create-link-alternate, .navbar-nav .btn-create-link + .btn-create-link-alternate, .navbar-nav .btn-create-link-alternate + .btn-create-link-alternate {
     margin-left: 1rem; }
-.navbar-nav .nav-item + .nav-item, .navbar-nav .btn-navbar + .nav-item, .navbar-nav .btn-create-link + .nav-item, .navbar-nav .btn-create-link-alternate + .nav-item, .navbar-nav .nav-item + .btn-navbar, .navbar-nav .btn-navbar + .btn-navbar, .navbar-nav .btn-create-link + .btn-navbar, .navbar-nav .btn-create-link-alternate + .btn-navbar, .navbar-nav .nav-item + .btn-create-link, .navbar-nav .btn-navbar + .btn-create-link, .navbar-nav .btn-create-link + .btn-create-link, .navbar-nav .btn-create-link-alternate + .btn-create-link, .navbar-nav .nav-item + .btn-create-link-alternate, .navbar-nav .btn-navbar + .btn-create-link-alternate, .navbar-nav .btn-create-link + .btn-create-link-alternate, .navbar-nav .btn-create-link-alternate + .btn-create-link-alternate {
+.navbar-nav .nav-item + .nav-item, .navbar-nav .btn-navbar + .nav-item, .navbar-nav .btn-navbar-active + .nav-item, .navbar-nav .btn-create-link + .nav-item, .navbar-nav .btn-create-link-alternate + .nav-item, .navbar-nav .nav-item + .btn-navbar, .navbar-nav .btn-navbar + .btn-navbar, .navbar-nav .btn-navbar-active + .btn-navbar, .navbar-nav .btn-create-link + .btn-navbar, .navbar-nav .btn-create-link-alternate + .btn-navbar, .navbar-nav .nav-item + .btn-navbar-active, .navbar-nav .btn-navbar + .btn-navbar-active, .navbar-nav .btn-navbar-active + .btn-navbar-active, .navbar-nav .btn-create-link + .btn-navbar-active, .navbar-nav .btn-create-link-alternate + .btn-navbar-active, .navbar-nav .nav-item + .btn-create-link, .navbar-nav .btn-navbar + .btn-create-link, .navbar-nav .btn-navbar-active + .btn-create-link, .navbar-nav .btn-create-link + .btn-create-link, .navbar-nav .btn-create-link-alternate + .btn-create-link, .navbar-nav .nav-item + .btn-create-link-alternate, .navbar-nav .btn-navbar + .btn-create-link-alternate, .navbar-nav .btn-navbar-active + .btn-create-link-alternate, .navbar-nav .btn-create-link + .btn-create-link-alternate, .navbar-nav .btn-create-link-alternate + .btn-create-link-alternate {
   margin-left: 1rem; }
 
 .navbar-light .navbar-brand {
   color: rgba(0, 0, 0, 0.8); }
   .navbar-light .navbar-brand:focus, .navbar-light .navbar-brand:hover {
     color: rgba(0, 0, 0, 0.8); }
-.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .btn-navbar, .navbar-light .navbar-nav .btn-create-link, .navbar-light .navbar-nav .btn-create-link-alternate {
+.navbar-light .navbar-nav .nav-link, .navbar-light .navbar-nav .btn-navbar, .navbar-light .navbar-nav .btn-navbar-active, .navbar-light .navbar-nav .btn-create-link, .navbar-light .navbar-nav .btn-create-link-alternate {
   color: rgba(0, 0, 0, 0.3); }
-  .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .btn-navbar:focus, .navbar-light .navbar-nav .btn-create-link:focus, .navbar-light .navbar-nav .btn-create-link-alternate:focus, .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .btn-navbar:hover, .navbar-light .navbar-nav .btn-create-link:hover, .navbar-light .navbar-nav .btn-create-link-alternate:hover {
+  .navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .btn-navbar:focus, .navbar-light .navbar-nav .btn-navbar-active:focus, .navbar-light .navbar-nav .btn-create-link:focus, .navbar-light .navbar-nav .btn-create-link-alternate:focus, .navbar-light .navbar-nav .nav-link:hover, .navbar-light .navbar-nav .btn-navbar:hover, .navbar-light .navbar-nav .btn-navbar-active:hover, .navbar-light .navbar-nav .btn-create-link:hover, .navbar-light .navbar-nav .btn-create-link-alternate:hover {
     color: rgba(0, 0, 0, 0.6); }
-.navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .open > .btn-navbar, .navbar-light .navbar-nav .open > .btn-create-link, .navbar-light .navbar-nav .open > .btn-create-link-alternate, .navbar-light .navbar-nav .open > .nav-link:focus, .navbar-light .navbar-nav .open > .btn-navbar:focus, .navbar-light .navbar-nav .open > .btn-create-link:focus, .navbar-light .navbar-nav .open > .btn-create-link-alternate:focus, .navbar-light .navbar-nav .open > .nav-link:hover, .navbar-light .navbar-nav .open > .btn-navbar:hover, .navbar-light .navbar-nav .open > .btn-create-link:hover, .navbar-light .navbar-nav .open > .btn-create-link-alternate:hover,
+.navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .open > .btn-navbar, .navbar-light .navbar-nav .open > .btn-navbar-active, .navbar-light .navbar-nav .open > .btn-create-link, .navbar-light .navbar-nav .open > .btn-create-link-alternate, .navbar-light .navbar-nav .open > .nav-link:focus, .navbar-light .navbar-nav .open > .btn-navbar:focus, .navbar-light .navbar-nav .open > .btn-navbar-active:focus, .navbar-light .navbar-nav .open > .btn-create-link:focus, .navbar-light .navbar-nav .open > .btn-create-link-alternate:focus, .navbar-light .navbar-nav .open > .nav-link:hover, .navbar-light .navbar-nav .open > .btn-navbar:hover, .navbar-light .navbar-nav .open > .btn-navbar-active:hover, .navbar-light .navbar-nav .open > .btn-create-link:hover, .navbar-light .navbar-nav .open > .btn-create-link-alternate:hover,
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .active > .btn-navbar,
+.navbar-light .navbar-nav .active > .btn-navbar-active,
 .navbar-light .navbar-nav .active > .btn-create-link,
 .navbar-light .navbar-nav .active > .btn-create-link-alternate,
 .navbar-light .navbar-nav .active > .nav-link:focus,
 .navbar-light .navbar-nav .active > .btn-navbar:focus,
+.navbar-light .navbar-nav .active > .btn-navbar-active:focus,
 .navbar-light .navbar-nav .active > .btn-create-link:focus,
 .navbar-light .navbar-nav .active > .btn-create-link-alternate:focus,
 .navbar-light .navbar-nav .active > .nav-link:hover,
 .navbar-light .navbar-nav .active > .btn-navbar:hover,
+.navbar-light .navbar-nav .active > .btn-navbar-active:hover,
 .navbar-light .navbar-nav .active > .btn-create-link:hover,
 .navbar-light .navbar-nav .active > .btn-create-link-alternate:hover,
 .navbar-light .navbar-nav .nav-link.open,
 .navbar-light .navbar-nav .open.btn-navbar,
+.navbar-light .navbar-nav .open.btn-navbar-active,
 .navbar-light .navbar-nav .open.btn-create-link,
 .navbar-light .navbar-nav .open.btn-create-link-alternate,
 .navbar-light .navbar-nav .nav-link.open:focus,
 .navbar-light .navbar-nav .open.btn-navbar:focus,
+.navbar-light .navbar-nav .open.btn-navbar-active:focus,
 .navbar-light .navbar-nav .open.btn-create-link:focus,
 .navbar-light .navbar-nav .open.btn-create-link-alternate:focus,
 .navbar-light .navbar-nav .nav-link.open:hover,
 .navbar-light .navbar-nav .open.btn-navbar:hover,
+.navbar-light .navbar-nav .open.btn-navbar-active:hover,
 .navbar-light .navbar-nav .open.btn-create-link:hover,
 .navbar-light .navbar-nav .open.btn-create-link-alternate:hover,
 .navbar-light .navbar-nav .nav-link.active,
 .navbar-light .navbar-nav .active.btn-navbar,
+.navbar-light .navbar-nav .active.btn-navbar-active,
 .navbar-light .navbar-nav .active.btn-create-link,
 .navbar-light .navbar-nav .active.btn-create-link-alternate,
 .navbar-light .navbar-nav .nav-link.active:focus,
 .navbar-light .navbar-nav .active.btn-navbar:focus,
+.navbar-light .navbar-nav .active.btn-navbar-active:focus,
 .navbar-light .navbar-nav .active.btn-create-link:focus,
 .navbar-light .navbar-nav .active.btn-create-link-alternate:focus,
 .navbar-light .navbar-nav .nav-link.active:hover,
 .navbar-light .navbar-nav .active.btn-navbar:hover,
+.navbar-light .navbar-nav .active.btn-navbar-active:hover,
 .navbar-light .navbar-nav .active.btn-create-link:hover,
 .navbar-light .navbar-nav .active.btn-create-link-alternate:hover {
   color: rgba(0, 0, 0, 0.8); }
@@ -3034,45 +3106,54 @@ input[type="button"].btn-block {
   color: white; }
   .navbar-dark .navbar-brand:focus, .navbar-dark .navbar-brand:hover {
     color: white; }
-.navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-nav .btn-navbar, .navbar-dark .navbar-nav .btn-create-link, .navbar-dark .navbar-nav .btn-create-link-alternate {
+.navbar-dark .navbar-nav .nav-link, .navbar-dark .navbar-nav .btn-navbar, .navbar-dark .navbar-nav .btn-navbar-active, .navbar-dark .navbar-nav .btn-create-link, .navbar-dark .navbar-nav .btn-create-link-alternate {
   color: rgba(255, 255, 255, 0.5); }
-  .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .btn-navbar:focus, .navbar-dark .navbar-nav .btn-create-link:focus, .navbar-dark .navbar-nav .btn-create-link-alternate:focus, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .btn-navbar:hover, .navbar-dark .navbar-nav .btn-create-link:hover, .navbar-dark .navbar-nav .btn-create-link-alternate:hover {
+  .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .btn-navbar:focus, .navbar-dark .navbar-nav .btn-navbar-active:focus, .navbar-dark .navbar-nav .btn-create-link:focus, .navbar-dark .navbar-nav .btn-create-link-alternate:focus, .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .btn-navbar:hover, .navbar-dark .navbar-nav .btn-navbar-active:hover, .navbar-dark .navbar-nav .btn-create-link:hover, .navbar-dark .navbar-nav .btn-create-link-alternate:hover {
     color: rgba(255, 255, 255, 0.75); }
-.navbar-dark .navbar-nav .open > .nav-link, .navbar-dark .navbar-nav .open > .btn-navbar, .navbar-dark .navbar-nav .open > .btn-create-link, .navbar-dark .navbar-nav .open > .btn-create-link-alternate, .navbar-dark .navbar-nav .open > .nav-link:focus, .navbar-dark .navbar-nav .open > .btn-navbar:focus, .navbar-dark .navbar-nav .open > .btn-create-link:focus, .navbar-dark .navbar-nav .open > .btn-create-link-alternate:focus, .navbar-dark .navbar-nav .open > .nav-link:hover, .navbar-dark .navbar-nav .open > .btn-navbar:hover, .navbar-dark .navbar-nav .open > .btn-create-link:hover, .navbar-dark .navbar-nav .open > .btn-create-link-alternate:hover,
+.navbar-dark .navbar-nav .open > .nav-link, .navbar-dark .navbar-nav .open > .btn-navbar, .navbar-dark .navbar-nav .open > .btn-navbar-active, .navbar-dark .navbar-nav .open > .btn-create-link, .navbar-dark .navbar-nav .open > .btn-create-link-alternate, .navbar-dark .navbar-nav .open > .nav-link:focus, .navbar-dark .navbar-nav .open > .btn-navbar:focus, .navbar-dark .navbar-nav .open > .btn-navbar-active:focus, .navbar-dark .navbar-nav .open > .btn-create-link:focus, .navbar-dark .navbar-nav .open > .btn-create-link-alternate:focus, .navbar-dark .navbar-nav .open > .nav-link:hover, .navbar-dark .navbar-nav .open > .btn-navbar:hover, .navbar-dark .navbar-nav .open > .btn-navbar-active:hover, .navbar-dark .navbar-nav .open > .btn-create-link:hover, .navbar-dark .navbar-nav .open > .btn-create-link-alternate:hover,
 .navbar-dark .navbar-nav .active > .nav-link,
 .navbar-dark .navbar-nav .active > .btn-navbar,
+.navbar-dark .navbar-nav .active > .btn-navbar-active,
 .navbar-dark .navbar-nav .active > .btn-create-link,
 .navbar-dark .navbar-nav .active > .btn-create-link-alternate,
 .navbar-dark .navbar-nav .active > .nav-link:focus,
 .navbar-dark .navbar-nav .active > .btn-navbar:focus,
+.navbar-dark .navbar-nav .active > .btn-navbar-active:focus,
 .navbar-dark .navbar-nav .active > .btn-create-link:focus,
 .navbar-dark .navbar-nav .active > .btn-create-link-alternate:focus,
 .navbar-dark .navbar-nav .active > .nav-link:hover,
 .navbar-dark .navbar-nav .active > .btn-navbar:hover,
+.navbar-dark .navbar-nav .active > .btn-navbar-active:hover,
 .navbar-dark .navbar-nav .active > .btn-create-link:hover,
 .navbar-dark .navbar-nav .active > .btn-create-link-alternate:hover,
 .navbar-dark .navbar-nav .nav-link.open,
 .navbar-dark .navbar-nav .open.btn-navbar,
+.navbar-dark .navbar-nav .open.btn-navbar-active,
 .navbar-dark .navbar-nav .open.btn-create-link,
 .navbar-dark .navbar-nav .open.btn-create-link-alternate,
 .navbar-dark .navbar-nav .nav-link.open:focus,
 .navbar-dark .navbar-nav .open.btn-navbar:focus,
+.navbar-dark .navbar-nav .open.btn-navbar-active:focus,
 .navbar-dark .navbar-nav .open.btn-create-link:focus,
 .navbar-dark .navbar-nav .open.btn-create-link-alternate:focus,
 .navbar-dark .navbar-nav .nav-link.open:hover,
 .navbar-dark .navbar-nav .open.btn-navbar:hover,
+.navbar-dark .navbar-nav .open.btn-navbar-active:hover,
 .navbar-dark .navbar-nav .open.btn-create-link:hover,
 .navbar-dark .navbar-nav .open.btn-create-link-alternate:hover,
 .navbar-dark .navbar-nav .nav-link.active,
 .navbar-dark .navbar-nav .active.btn-navbar,
+.navbar-dark .navbar-nav .active.btn-navbar-active,
 .navbar-dark .navbar-nav .active.btn-create-link,
 .navbar-dark .navbar-nav .active.btn-create-link-alternate,
 .navbar-dark .navbar-nav .nav-link.active:focus,
 .navbar-dark .navbar-nav .active.btn-navbar:focus,
+.navbar-dark .navbar-nav .active.btn-navbar-active:focus,
 .navbar-dark .navbar-nav .active.btn-create-link:focus,
 .navbar-dark .navbar-nav .active.btn-create-link-alternate:focus,
 .navbar-dark .navbar-nav .nav-link.active:hover,
 .navbar-dark .navbar-nav .active.btn-navbar:hover,
+.navbar-dark .navbar-nav .active.btn-navbar-active:hover,
 .navbar-dark .navbar-nav .active.btn-create-link:hover,
 .navbar-dark .navbar-nav .active.btn-create-link-alternate:hover {
   color: white; }
@@ -4340,10 +4421,10 @@ button.close {
   margin-left: auto;
   margin-right: auto; }
 
-.pull-xs-left, .btn-navbar-brand {
+.pull-xs-left, .btn-navbar-brand, .btn-navbar-active-brand {
   float: left !important; }
 
-.pull-xs-right, .btn-navbar-other {
+.pull-xs-right, .btn-navbar-other, .btn-navbar-active-other {
   float: right !important; }
 
 .pull-xs-none {
@@ -4830,7 +4911,7 @@ a.bg-danger:focus, a.bg-danger:hover {
     background-color: rgba(255, 255, 255, 0.5);
     border: 0px solid #656565;
     padding: 15px 20px;
-    font-size: 1.3em;
+    font-size: 16px;
     line-height: 1em;
     border-radius: 10px; }
     .btn-navbar-brand:hover, .btn-navbar-other:hover {
@@ -4856,6 +4937,49 @@ a.bg-danger:focus, a.bg-danger:hover {
     .btn-navbar-brand.disabled:hover, .btn-navbar-brand:disabled:hover, .btn-navbar-other.disabled:hover, .btn-navbar-other:disabled:hover {
       background-color: rgba(255, 255, 255, 0.5);
       border-color: #656565; }
+
+.btn-navbar-active {
+  font-family: 'Roboto', sans-serif;
+  color: #656565; }
+  .btn-navbar-active:hover {
+    color: white !important;
+    text-decoration: none;
+    cursor: pointer; }
+    .btn-navbar-active:hover a {
+      text-decoration: none; }
+  .btn-navbar-active-brand, .btn-navbar-active-other {
+    margin-left: 0px;
+    margin-right: 0px;
+    color: #f2f2f2;
+    background-color: #3b5998;
+    border: 0px solid #3b5998;
+    padding: 15px 20px;
+    font-size: 16px;
+    line-height: 1em;
+    border-radius: 10px; }
+    .btn-navbar-active-brand:hover, .btn-navbar-active-other:hover {
+      color: #f2f2f2;
+      background-color: #2d4373;
+      border-color: #2a3f6c; }
+    .btn-navbar-active-brand:focus, .btn-navbar-active-brand.focus, .btn-navbar-active-other:focus, .btn-navbar-active-other.focus {
+      color: #f2f2f2;
+      background-color: #2d4373;
+      border-color: #2a3f6c; }
+    .btn-navbar-active-brand:active, .btn-navbar-active-brand.active, .open > .btn-navbar-active-brand.dropdown-toggle, .btn-navbar-active-other:active, .btn-navbar-active-other.active, .open > .btn-navbar-active-other.dropdown-toggle {
+      color: #f2f2f2;
+      background-color: #2d4373;
+      border-color: #2a3f6c;
+      background-image: none; }
+      .btn-navbar-active-brand:active:hover, .btn-navbar-active-brand:active:focus, .btn-navbar-active-brand:active.focus, .btn-navbar-active-brand.active:hover, .btn-navbar-active-brand.active:focus, .btn-navbar-active-brand.active.focus, .open > .btn-navbar-active-brand.dropdown-toggle:hover, .open > .btn-navbar-active-brand.dropdown-toggle:focus, .open > .btn-navbar-active-brand.dropdown-toggle.focus, .btn-navbar-active-other:active:hover, .btn-navbar-active-other:active:focus, .btn-navbar-active-other:active.focus, .btn-navbar-active-other.active:hover, .btn-navbar-active-other.active:focus, .btn-navbar-active-other.active.focus, .open > .btn-navbar-active-other.dropdown-toggle:hover, .open > .btn-navbar-active-other.dropdown-toggle:focus, .open > .btn-navbar-active-other.dropdown-toggle.focus {
+        color: #f2f2f2;
+        background-color: #23345a;
+        border-color: #17233c; }
+    .btn-navbar-active-brand.disabled:focus, .btn-navbar-active-brand.disabled.focus, .btn-navbar-active-brand:disabled:focus, .btn-navbar-active-brand:disabled.focus, .btn-navbar-active-other.disabled:focus, .btn-navbar-active-other.disabled.focus, .btn-navbar-active-other:disabled:focus, .btn-navbar-active-other:disabled.focus {
+      background-color: #3b5998;
+      border-color: #3b5998; }
+    .btn-navbar-active-brand.disabled:hover, .btn-navbar-active-brand:disabled:hover, .btn-navbar-active-other.disabled:hover, .btn-navbar-active-other:disabled:hover {
+      background-color: #3b5998;
+      border-color: #3b5998; }
 
 .btn-create-link-supersmall {
   width: 60px;
@@ -4952,24 +5076,32 @@ a.bg-danger:focus, a.bg-danger:hover {
   .btn-create-link-alternate:hover {
     color: white !important; }
 
+@media screen and (max-width: 768px) {
+  .btn-hide-mobile {
+    display: none; } }
+
 .navbar-dashboard {
-  border-radius: 0px !important;
-  height: 80px; }
-  @media screen and (max-width: 966px) {
-    .navbar-dashboard-left {
-      display: none; } }
-  @media screen and (max-width: 966px) {
+  width: 100%;
+  border-radius: 0px !important; }
+  @media screen and (min-width: 768px) {
     .navbar-dashboard {
+      height: 80px; } }
+  @media screen and (max-width: 767px) {
+    .navbar-dashboard {
+      height: 50px; } }
+  @media screen and (max-width: 768px) {
+    .navbar-dashboard-left {
+      display: none;
       height: 106.66667px; } }
 
 .nav-extra-top-0 {
-  margin-top: 5px; }
+  margin-top: 10px; }
 
 .nav-extra-top-1 {
   margin-top: 6px; }
 
 .nav-extra-top-2 {
-  margin-top: 10px; }
+  margin-top: 15px; }
 
 .nav-extra-top-3 {
   margin-top: 28px; }
@@ -4981,6 +5113,21 @@ a.bg-danger:focus, a.bg-danger:hover {
 @media screen and (max-width: 990px) {
   .m-l-sm-0 {
     margin-left: 0px !important; } }
+
+@media screen and (max-width: 768px) {
+  .nav-right-group {
+    display: none; } }
+
+.nav-item-mobile {
+  color: white;
+  margin-top: 3px; }
+  @media screen and (min-width: 768px) {
+    .nav-item-mobile {
+      display: none; } }
+
+@media screen and (max-width: 768px) {
+  .bootstrap-vertical-nav {
+    display: none; } }
 
 .login-cluster {
   background: white; }
@@ -5378,5 +5525,64 @@ a.bg-danger:focus, a.bg-danger:hover {
 @media screen and (max-width: 767px) {
   .video-phone-hide {
     display: none; } }
+
+#wrapper {
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  padding-left: 250px; }
+
+#sidebar-wrapper-active {
+  width: 250px; }
+
+#sidebar-wrapper-inactive {
+  display: none;
+  width: 0px; }
+
+.sidebar-nav {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  width: 250px;
+  margin: 0;
+  padding: 0;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  list-style: none;
+  background: #373a3c;
+  height: 100vh; }
+
+.sidebar-li {
+  padding: 7.5px; }
+  .sidebar-li a {
+    color: rgba(255, 255, 255, 0.75); }
+  .sidebar-li:hover {
+    background: #1f2021; }
+    .sidebar-li:hover a {
+      text-decoration: none;
+      color: white; }
+
+.sidebar-brand {
+  padding: 7.5px; }
+  .sidebar-brand:hover {
+    background: #1f2021; }
+    .sidebar-brand:hover a {
+      text-decoration: none;
+      color: white; }
+  .sidebar-brand a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.9); }
+
+.sidebar-break {
+  border-color: rgba(255, 255, 255, 0.6); }
+
+@media screen and (max-width: 767px) {
+  .mobile-body-container {
+    width: 100%; }
+    .mobile-body-container-active {
+      margin-left: 230px; } }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,0 +1,11 @@
+.mobile-body-container
+{
+    @media screen and (max-width: 767px)
+    {
+	&-active
+	{
+	    margin-left: 230px;
+	}
+	width: 100%;
+    }
+}
